@@ -10,9 +10,8 @@ const getSelfUserObj = async ( selfUserId ) => {
     },
   )
     .then( ( res ) => res.json() )
-    .catch( ( err ) => ( err ) )
+    .catch( ( err ) => err );
 
-  return gotSelfUserObj
-}
-
-export default getSelfUserObj
+  return gotSelfUserObj;
+};
+export default getSelfUserObj;

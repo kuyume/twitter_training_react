@@ -1,29 +1,25 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "semi": ["error", "never", {"beforeStatementContinuationChars": "never"}],
-    "semi-spacing": ["error", {"after": true, "before": false}],
-    "semi-style": ["error", "first"],
-    "no-extra-semi": "error",
-    "no-unexpected-multiline": "error",
-    "no-unreachable": "error",
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "linebreak-style": "off",
+    // "semi": ["error", "never", { "beforeStatementContinuationChars": "never" }],
+    // "semi-spacing": ["error", { "after": true, "before": false }],
+    // "semi-style": ["error", "first"],
+    // "no-extra-semi": "error",
+    // "no-unexpected-multiline": "error",
+    // "no-unreachable": "error",
     "no-underscore-dangle": "off",
 
     "react/prop-types": "off",
@@ -33,6 +29,6 @@
     "space-in-parens": ["error", "always"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
-    "react/jsx-curly-spacing": [2, {"when": "always"}]
-    }
+      "react/jsx-curly-spacing": [2, { "when": "always" }]
+  }
 }

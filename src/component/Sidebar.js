@@ -1,28 +1,31 @@
-import { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import getSelfUserObj from '../lib/user'
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import getSelfUserObj from '../lib/user';
+
+const StyledSidebar = styled.aside`
+  box-sizing: border-box;
+  border: 2px solid orange;
+  width: 30%;
+  position: fixed;
+  top: 80px;
+  right: 0;
+`;
 
 const Sidebar = () => {
-  const StyledSidebar = styled.aside`
-    box-sizing: border-box;
-    border: 2px solid orange;
-    width: 30%;
-    position: fixed;
-    top: 80px;
-    right: 0;
-  `
-
-  const tempUserId = '60ec1ed6a56c19643c998bc3'
-  const [selfUserObj, setSelfUserObj] = useState( { name: 'Loading...', id: 'Loading...' } )
+  const tempUserId = '60ec1ed6a56c19643c998bc3';
+  const [selfUserObj, setSelfUserObj] = useState( {
+    name: 'Loading...',
+    id: 'Loading...',
+  } );
 
   useEffect( () => {
     getSelfUserObj( tempUserId )
       .then( ( gotSelfUserObj ) => {
-      // console.log(gotSelfUserObj)
-        setSelfUserObj( { name: gotSelfUserObj.name, id: gotSelfUserObj._id } )
+        // console.log(gotSelfUserObj)
+        setSelfUserObj( { name: gotSelfUserObj.name, id: gotSelfUserObj._id } );
       } )
-      .catch( ( err ) => err )
-  }, [] )
+      .catch( ( err ) => err );
+  }, [] );
 
   return (
     <StyledSidebar>
@@ -30,15 +33,14 @@ const Sidebar = () => {
       <p>
         user id:
         {' '}
-        { selfUserObj.id }
+        {selfUserObj.id}
       </p>
       <p>
         user name:
         {' '}
-        { selfUserObj.name }
+        {selfUserObj.name}
       </p>
     </StyledSidebar>
-  )
-}
-
-export default Sidebar
+  );
+};
+export default Sidebar;
