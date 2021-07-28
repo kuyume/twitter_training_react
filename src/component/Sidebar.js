@@ -9,6 +9,7 @@ const StyledSidebar = styled.aside`
   position: fixed;
   top: 80px;
   right: 0;
+  padding: 20px;
 `;
 
 const Sidebar = () => {

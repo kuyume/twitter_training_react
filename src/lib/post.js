@@ -1,5 +1,7 @@
+const ROOT_URL = 'https://160.16.106.167:2500';
+
 const getAllPostObjects = async () => {
-  const gotAllPostObjects = await fetch( 'http://localhost:2500/post', {
+  const gotAllPostObjects = await fetch( `${ROOT_URL}/post`, {
     method: 'GET',
     mode: 'cors',
     headers: {
@@ -13,7 +15,7 @@ const getAllPostObjects = async () => {
 };
 
 const getPostById = async ( postId ) => {
-  const gotPostObject = await fetch( `http://localhost:2500/post/${postId}`, {
+  const gotPostObject = await fetch( `${ROOT_URL}/post/${postId}`, {
     method: 'GET',
     mode: 'cors',
     headers: {
@@ -27,7 +29,7 @@ const getPostById = async ( postId ) => {
 };
 
 const sendPost = async ( postObject ) => {
-  const gotPostObject = await fetch( 'http://localhost:2500/user/60ec1ed6a56c19643c998bc3/post/create', {
+  const gotPostObject = await fetch( `${ROOT_URL}/user/60ec1ed6a56c19643c998bc3/post/create`, {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -40,4 +42,21 @@ const sendPost = async ( postObject ) => {
 
   return gotPostObject;
 };
-export { getAllPostObjects, getPostById, sendPost };
+
+const deletePost = async ( postId ) => {
+  await fetch( `${ROOT_URL}/user/60ec1ed6a56c19643c998bc3/post/delete/${postId}`, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  } )
+    .then( ( res ) => res.json() )
+    .catch( ( err ) => err );
+
+  return 'post deleted';
+};
+
+export {
+  getAllPostObjects, getPostById, sendPost, deletePost,
+};

@@ -1,6 +1,8 @@
+const ROOT_URL = 'https://160.16.106.167:2500';
+
 const getSelfUserObj = async ( selfUserId ) => {
   const gotSelfUserObj = await fetch(
-    `http://localhost:2500/user/${selfUserId}`,
+    `${ROOT_URL}/user/${selfUserId}`,
     {
       method: 'GET',
       mode: 'cors',

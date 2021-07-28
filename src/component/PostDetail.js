@@ -26,7 +26,6 @@ const StyledContent = styled.h3`
 
 const PostDetail = () => {
   const { id } = useParams();
-
   const [postObject, setPostObject] = useState( [{ title: 'Loading...' }] );
   useEffect( () => {
     getPostById( id )
@@ -36,6 +35,7 @@ const PostDetail = () => {
       } )
       .catch( ( err ) => err );
   }, [] );
+
   return (
     <Article>
       <StyledTitle>

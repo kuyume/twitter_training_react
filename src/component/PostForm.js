@@ -5,7 +5,7 @@ import { sendPost } from '../lib/post';
 
 const StyledForm = styled.div`
   width: 30%;
-  border: 2px solid purple;
+  background-color: #DDAA70;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -15,7 +15,8 @@ const StyledForm = styled.div`
 const StyledInput = styled.input`
   display: block;
   width: 100%;
-  border: 1px solid black;
+  background-color: #3A2722;
+  color: white;
   font-size: 16px;
   margin: 10px 0;
   padding: 5px;
@@ -24,10 +25,21 @@ const StyledInput = styled.input`
 const StyledTextarea = styled.textarea`
   display: block;
   width: 100%;
-  border: 1px solid gray;
+  background-color: #3A2722;
+  color: white;
   font-size: 14px;
-  margin: 10px 0;
+  margin: 10px 0 20px;
   padding: 5px;
+`;
+
+const StyledButton = styled.button`
+  background-color: #8D8E7C;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Osaka-Mono';
+  letter-spacing: 0.1em;
+  padding: 10px 15px;
 `;
 
 const PostForm = () => {
@@ -71,12 +83,12 @@ const PostForm = () => {
         value={ content }
         rows="5"
       />
-      <button
+      <StyledButton
         type="button"
         onClick={ formSubmit }
       >
         POST!!
-      </button>
+      </StyledButton>
     </StyledForm>
   );
 };
