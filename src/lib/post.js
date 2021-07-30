@@ -1,4 +1,4 @@
-const ROOT_URL = 'https://160.16.106.167:2500';
+const ROOT_URL = 'http://160.16.106.167:2500';
 
 const getAllPostObjects = async () => {
   const gotAllPostObjects = await fetch( `${ROOT_URL}/post`, {
